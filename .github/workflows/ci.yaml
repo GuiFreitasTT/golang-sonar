@@ -15,10 +15,11 @@ jobs:
     - run: go test -coverprofile=coverage ./go
     
     - name: SonarCloud Scan
-    uses: SonarSource/sonarcloud-github-action@master
-    env:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      projectKey: GuiFreitasTT_golang-sonar
-      organization: Gui
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        projectKey: GuiFreitasTT_golang-sonar
+        organization: Gui
+
