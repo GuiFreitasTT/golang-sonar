@@ -16,9 +16,12 @@ jobs:
     
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
-      with:
-        projectKey: GuiFreitasTT_golang-sonar   
-        organization: Gui                        
-        token: ${{ secrets.SONAR_TOKEN }}        
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: https://sonarcloud.io
+        SONAR_PROJECT_KEY: GuiFreitasTT_golang-sonar
+        SONAR_ORGANIZATION: Gui
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
 
 
